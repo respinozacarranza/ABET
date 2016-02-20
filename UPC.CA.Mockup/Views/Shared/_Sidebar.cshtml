@@ -1,0 +1,50 @@
+﻿<div>
+    <ul class="site-menu">
+
+        <li class="site-menu-category"></li>
+        <li class="site-menu-item">
+            <a class="animsition-link" href="@Url.Action("Dashboard","Home")">
+                <i class="mdi mdi-view-dashboard" aria-hidden="true"></i>
+                <span class="site-menu-title">Dashboard</span>
+            </a>
+        </li>
+
+        <li class="site-menu-category">Admin</li>
+        <li class="site-menu-item has-sub">
+            <a href="#">
+                <i class="mdi mdi-view-dashboard" aria-hidden="true"></i>
+                <span class="site-menu-title">Dashboard</span>
+                <span class="site-menu-arrow"></span>
+            </a>
+            <ul class="site-menu-sub">
+                @for (int i = 0; i < 5; i++)
+                {
+                    <li class="site-menu-item">
+                        <a class="animsition-link" href="#">
+                            <span class="site-menu-title">Option @i</span>
+                        </a>
+                    </li>
+                }
+            </ul>
+        </li>
+        <li class="site-menu-category">Reportes</li>
+        <li class="site-menu-item has-sub">
+            <a href="#">
+                <i class="mdi mdi-bookmark" aria-hidden="true"></i>
+                <span class="site-menu-title">Reporte</span>
+                <span class="site-menu-arrow"></span>
+            </a>
+            <ul class="site-menu-sub">
+                @for (int j = 0; j < 5; j++)
+                {
+                    <li class="site-menu-item">
+                        <a class="animsition-link" href="@Url.Action("ViewReporte","Report")">
+                            <span class="site-menu-title">Reporte @j</span>
+                        </a>
+                    </li>
+                }
+            </ul>
+        </li>
+    </ul>
+
+</div>

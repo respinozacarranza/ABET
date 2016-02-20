@@ -1,0 +1,69 @@
+﻿@model UPC.CA.Mockup.ViewModels.Report.ViewReportViewModel
+
+@{
+    ViewBag.Title = "Reporte";
+    ViewBag.Icon = "bar-chart";
+}
+
+@section Breadcrumbs{
+}
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="panel">
+            <div class="panel-heading">
+                <h3 class="panel-title"><i class="fa fa-filter"></i> Filtro</h3>
+                <div class="panel-actions">
+                    <a class="panel-action icon wb-minus" data-toggle="panel-collapse" aria-hidden="true"></a>
+                </div>
+            </div>
+            <div class="panel-body row">
+                @for (int a = 1; a < 7; a++)
+                {
+                    <div class="form-group col-sm-4">
+                        <label class="control-label" for="inputBasicLastName">Filtro @a</label>
+                        <select type="text" class="form-control" placeholder="seleccione">
+                            @for (int i = 1; i < 5; i++)
+                            {
+                                <option value="@i">Opcion @i</option>
+                            }
+                        </select>
+                    </div>
+
+                }
+            </div>
+            <div class="panel-footer text-right">
+                <div class="btn-group" role="group">
+                    <button type="button" class="btn btn-dark dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                        <i class="fa fa-file-o" aria-hidden="true"></i> Exportar
+                        <span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu" role="menu">
+                        <li><a href="#" role="menuitem"><i class="fa fa-file-pdf-o"></i> PDF</a></li>
+                        <li><a href="#" role="menuitem"><i class="fa fa-file-excel-o"></i> Exel</a></li>
+                        <li><a href="#" role="menuitem"><i class="fa fa-file-word-o"></i> Word</a></li>
+                    </ul>
+                </div>
+
+                <button type="submit" class="btn btn-primary">Aceptar</button>
+            </div>
+        </div>
+
+        <div class="panel">
+            <div class="panel-heading">
+                <h3 class="panel-title"><i class="fa fa-file"></i> Documento</h3>
+                <div class="panel-actions">
+                    <a class="panel-action icon wb-expand" data-toggle="panel-fullscreen" aria-hidden="true"></a>
+                </div>
+            </div>
+            <div class="panel-body">
+                <iframe src="https://www.oic.qld.gov.au/__data/assets/pdf_file/0006/7755/other-sample-googleanalytics-report.pdf" style="height:90vh; width:100%; border:none"></iframe>
+            </div>
+        </div>
+    </div>
+</div>
+@section Scripts{
+
+    <script src="@Url.Content("~/Content/js/components/panel.min.js")"></script>
+
+}
